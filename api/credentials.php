@@ -28,18 +28,11 @@ function connect_bd() {
   return $conn;
 }
 
-// $conn->query("SET NAMES 'utf8'");
-// $conn->query("SET character_set_connection=utf8");
-// $conn->query("SET character_set_client=utf8");
-// $conn->query("SET character_set_results=utf8");
-
-// if ($conn->connect_error) {
-//   $myObj = new stdClass();
-//   $myObj->message = http_response_message(500);
-//   $myJSON = json_encode($myObj);
-//   $conn->close();
-//   die($myJSON);
-// }
+function dateTimeNow()
+{
+	$datetime = new DateTime(null, new DateTimeZone("America/Fortaleza"));
+	return $datetime->format("Y-m-d H:i:s");
+}
 
 function http_response_message($code = NULL)
 {

@@ -4,8 +4,8 @@ require_once "../credentials.php";
 
 $conn = connect_bd();
 
-if($_POST["NOME"]) {
-  $result = pg_query($conn, "INSERT INTO LISTA_COMPRAS.TIPO (NOME) VALUES ('" . $_POST["NOME"] . "')");
+if($_POST["ID"]) {
+  $result = pg_query($conn, "DELETE FROM LISTA_COMPRAS.LISTA WHERE ID_ITEM_COMPRA = '". $_POST['ID'] ."'");
 
   if(!!$result) {
     $myJSON = retorno("0");
