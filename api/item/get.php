@@ -7,7 +7,7 @@ $conn = connect_bd();
 $sql = "";
 
 if($_POST["EXCLUIDO"]) {
-  $sql = pg_query($conn, "SELECT * FROM LISTA_COMPRAS.ITEM WHERE EXCLUIDO = '". $_POST["EXCLUIDO"] ."'");
+  $sql = pg_query($conn, "SELECT * FROM LISTA_COMPRAS.ITEM WHERE EXCLUIDO = ". $_POST["EXCLUIDO"]);
 } else if($_POST["ID"]) {
   $sql = pg_query($conn, "SELECT * FROM LISTA_COMPRAS.ITEM WHERE ID_TIPO = '". $_POST['ID'] ."' AND EXCLUIDO = 0");
 } else {

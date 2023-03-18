@@ -5,7 +5,7 @@ require_once "../credentials.php";
 $conn = connect_bd();
 
 if($_POST["ID"]) {
-  $result = pg_query($conn, "UPDATE LISTA_COMPRAS.ITEM SET EXCLUIDO = 1 WHERE ID_TIPO = '". $_POST['ID'] ."'");
+  $result = pg_query($conn, "UPDATE LISTA_COMPRAS.ITEM SET EXCLUIDO = 1 WHERE ID_ITEM = '". $_POST['ID'] ."'");
 
   if(!!$result) {
     $myJSON = retorno("0");

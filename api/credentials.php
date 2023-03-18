@@ -30,7 +30,7 @@ function connect_bd() {
 
 function dateTimeNow()
 {
-	$datetime = new DateTime(null, new DateTimeZone("America/Fortaleza"));
+	$datetime = new DateTime('now', new DateTimeZone("America/Sao_Paulo"));
 	return $datetime->format("Y-m-d H:i:s");
 }
 
